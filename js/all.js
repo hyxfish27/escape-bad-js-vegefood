@@ -1,4 +1,7 @@
 // TODO: 修正 ESLint 錯誤、補上分號、前輩說要改單引號 QQ
+/* global axios */
+// 定義全域變數 (ESLint 會從註解中的 global 了解他定義的參數)，讓變數在各個檔案間都可以使用
+
 const url = 'https://hexschool.github.io/js-filter-data/data.json';
 const table = document.querySelector('.table-content');
 let data;
@@ -21,7 +24,6 @@ function renderData(renderItem) {
   table.innerHTML = str;
 }
 
-// eslint-disable-next-line no-undef
 axios.get(url)
   .then((res) => {
     data = res.data.filter((a) => a.作物名稱);
